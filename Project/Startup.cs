@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Project.Data;
 
 namespace Project
 {
@@ -33,6 +35,9 @@ namespace Project
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ProjectContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ProjectContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
