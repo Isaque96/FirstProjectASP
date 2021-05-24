@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Project.Models;
 using Project.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project.Services
 {
@@ -16,9 +17,9 @@ namespace Project.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
