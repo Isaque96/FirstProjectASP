@@ -3,13 +3,14 @@
 }
 
 <div>
-    <h1 class="text" align="left">
-        <img src="~/images/Perfil.jpg" alt="Isaque Schuwarte" /><b><i>Site for Personal Development</i></b>
+    <h1 aligh="left">
+        <img src="~/images/Perfil.jpg" alt="Isaque Schuwarte" class="img" />
     </h1>
+    <p class="text"><b><i>Site for Personal Development</i></b></p>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
+<div class="img-with-text">
+    <div>
         <h2>Application uses</h2>
         <ul>
             <li>Sample pages using ASP.NET Core MVC</li>
@@ -17,3 +18,26 @@
         </ul>
     </div>
 </div>
+
+<style>
+    .text {
+        font-size: 30pt;
+        padding-top: 160px;
+    }
+
+    .img {
+        float: left;
+        padding-right: 100px;
+
+    }
+
+    .img-with-text {
+        text-align: justify;
+        width: 300px;
+    }
+
+    .img-with-text img {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
